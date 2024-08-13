@@ -3,9 +3,11 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/shared/header";
 
-const nunito = Nunito({ subsets: ['cyrillic'],
-  variable: '--font-nunito',
-  weight: ['400', '500', '600', '700', '800', '900'], });
+const nunito = Nunito({
+  subsets: ["cyrillic"],
+  variable: "--font-nunito",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,11 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={nunito.className}>
         <main className="min-h-screen">
-          <Header/>
+          <Header />
           {children}
         </main>
-        
-        </body>
+      </body>
     </html>
   );
 }
