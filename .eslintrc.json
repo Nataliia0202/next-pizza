@@ -1,3 +1,48 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,    // Настройка среды браузера
+    "es2021": true      // Использование возможностей ECMAScript 2021
+  },
+   
+  "extends": [
+    "eslint:recommended",  // Использование стандартных правил ESLint
+    "plugin:react/recommended",  // Правила для React (если вы используете React)
+    "plugin:@typescript-eslint/recommended",  // Правила для TypeScript (если используется)
+    "prettier",   // Интеграция с Prettier
+    "next/core-web-vitals"
+  ],
+
+  "parser": "@typescript-eslint/parser",  // Использование парсера TypeScript
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true  // Поддержка JSX
+    },
+    "ecmaVersion": "latest",  // Использование последних возможностей ECMAScript
+    "sourceType": "module"  // Использование модулей ES6
+  },
+  "plugins": [
+    "react",  // Плагин для React
+    "@typescript-eslint"  // Плагин для TypeScript
+  ],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "quotes": ["error", "single"],  // Использование одинарных кавычек
+    "semi": ["error", "never"],  // Не использовать точку с запятой
+    "no-unused-vars": "warn",  // Предупреждение об неиспользуемых переменных
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",        // Проверять все переменные
+        "varsIgnorePattern": "^_",  // Игнорировать переменные, начинающиеся с подчеркивания
+        "args": "after-used", // Проверять аргументы функции, которые не используются
+        "argsIgnorePattern": "^_"  // Игнорировать неиспользуемые аргументы, начинающиеся с подчеркивания
+      }
+    ],  // То же для TypeScript
+    "prettier/prettier": ["error"]  // Применение правил Prettier как ошибок ESLint
+  },
+  "settings": {
+    "react": {
+      "version": "detect"  // Автоматическое определение версии React
+    }
+  }
 }

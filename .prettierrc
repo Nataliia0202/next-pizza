@@ -1,1 +1,33 @@
-{"plugins": ["prettier-plugin-tailwindcss"], "tailwindConfig": "./styles/tailwind.config.js", "tailwindAttributes": ["myClassList"], "tailwindFunctions": ["clsx"]}
+{
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindConfig": "./tailwind.config.js",
+  "tailwindAttributes": ["myClassList"],
+  "tailwindFunctions": ["clsx"],
+  "tailwindPreserveWhitespace": true,
+  "singleQuote": true,
+  "semi": false,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "trailingComma": "es5",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    "cn\\(([^)]*)\\)",
+    "clsx\\(([^)]*)\\)"
+  ],
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "javascriptreact": "javascriptreact",
+    "typescript": "typescript",
+    "typescriptreact": "typescriptreact"
+  }
+}
